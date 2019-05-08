@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>multiOAuth</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header>
+      <h2>
+        multi-OAuth
+      </h2>
+    </header>
+    <main>
+      <section>
+        <div><p>To proceed futher, login using below options:</p></div>
+      </section>
+      <section>
+        <form method="POST" action="/users/login">
+          <input required name="email" type="email" placeholder="Enter your email">
+          <input required name="password" type="password" placeholder="Enter your password">
+          <input type="submit" value="Sign In">
+        </form>
+        <div>
+          <p>Don't have an account yet?
+            <a href="/users/register" >Register here</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    
+  </body>
+</html>
