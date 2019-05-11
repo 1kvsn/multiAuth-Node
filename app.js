@@ -6,10 +6,13 @@ var logger = require('morgan');
 var session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 var passport = require('passport');
+require('dotenv').config();
+
 // var flash = require('flash');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var authRouter = require('./routes/auth');
 
 var app = express();
 
@@ -49,6 +52,7 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

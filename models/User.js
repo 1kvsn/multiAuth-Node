@@ -16,8 +16,26 @@ var userSchema = new Schema({
 	local: {
 		password: {
 			type: String,
-			required: true,
 			minLength: 4,
+		},
+		photo: {
+			type: String,
+		},
+	},
+	github: {
+		name: {
+			type: String,
+		},
+		photo: {
+			type: String,
+		},
+	},
+	twitter: {
+		name: {
+			type: String,
+		},
+		photo: {
+			type: String,
 		},
 	}
 });
@@ -46,7 +64,3 @@ userSchema.pre('save', function(next) {
 var User = mongoose.model('User', userSchema);
 
 module.exports = User;
-
-// photo: {
-// 	type: String,
-// }
